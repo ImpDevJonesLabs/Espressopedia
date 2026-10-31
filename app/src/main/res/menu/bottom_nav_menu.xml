@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/coffee_24px"
+        android:title="@string/title_brew" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/developer_guide_24px"
+        android:title="@string/title_guide" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/calculate_24px"
+        android:title="@string/title_calculator" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/settings_24px"
+        android:title="@string/title_settings" />
+
+</menu>

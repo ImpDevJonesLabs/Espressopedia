@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    tools:context=".CalculatorFragment">
+
+    <TextView
+        android:id="@+id/textViewRatioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Ratio"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextCoffeeRatio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Coffee Ratio"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/editTextWaterRatio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRatioLabel" />
+
+    <TextView
+        android:id="@+id/textViewCoffeeRatioSublabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/coffee"
+        android:textSize="12sp"
+        android:textColor="?attr/colorControlNormal"
+        app:layout_constraintEnd_toEndOf="@+id/editTextCoffeeRatio"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCoffeeRatio" />
+
+    <EditText
+        android:id="@+id/editTextWaterRatio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Water Ratio"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextCoffeeRatio"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRatioLabel" />
+
+    <TextView
+        android:id="@+id/textViewWaterRatioSublabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/water"
+        android:textSize="12sp"
+        android:textColor="?attr/colorControlNormal"
+        app:layout_constraintEnd_toEndOf="@+id/editTextWaterRatio"
+        app:layout_constraintTop_toBottomOf="@+id/editTextWaterRatio" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCoffeeRatioSublabel" />
+
+    <TextView
+        android:id="@+id/textViewAmountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/known_amount"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+    <Spinner
+        android:id="@+id/spinnerItemSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAmountLabel" />
+
+    <EditText
+        android:id="@+id/editTextAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerUnit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerItemSelector" />
+
+    <Spinner
+        android:id="@+id/spinnerUnit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextAmount"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerItemSelector" />
+
+    <View
+        android:id="@+id/separator_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAmount" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewResults"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Results will display here"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/separator_2" />-->
+
+    <LinearLayout
+        android:id="@+id/linearLayoutWater"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/separator_3"
+        app:layout_constraintTop_toBottomOf="@+id/separator_2">
+
+        <TextView
+            android:id="@+id/textViewWaterLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Water"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewWaterGrams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grams: " />
+
+        <TextView
+            android:id="@+id/textViewWaterOz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="oz: " />
+
+        <TextView
+            android:id="@+id/textViewWaterMl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mL: " />
+
+        <TextView
+            android:id="@+id/textViewWaterCups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cups: " />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separator_3"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separator_2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCoffee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/separator_3"
+        app:layout_constraintStart_toStartOf="@id/separator_2"
+        app:layout_constraintTop_toBottomOf="@+id/separator_2" >
+
+
+    <TextView
+        android:id="@+id/textViewCoffeeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Coffee"
+        android:layout_marginBottom="8dp"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewCoffeeGrams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grams: " />
+
+        <TextView
+            android:id="@+id/textViewCoffeeOz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="oz: " />
+
+        <TextView
+            android:id="@+id/textViewCoffeeTsp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tsp: " />
+
+        <TextView
+            android:id="@+id/textViewCoffeeTbsp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tbsp: " />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonGuide"
+        style="@style/Widget.Material3.FloatingActionButton.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/calculator_guide"
+        app:useCompatPadding="true"
+        app:srcCompat="@drawable/developer_guide_24px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/buttonCalculate"
+        style="@style/Widget.Material3.ExtendedFloatingActionButton.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        app:icon="@drawable/equal_24px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
